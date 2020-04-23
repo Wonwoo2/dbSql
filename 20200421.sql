@@ -46,7 +46,7 @@
  SELECT *
  FROM emp
  WHERE LOWER(ename) = 'smith'; 이런식으로 작성하면 안된다
- WHERE where = UPPER('smith'); 두가지 방식중에는 위에보다는 아래방식이 올바른 방식이다
+ WHERE ename = UPPER('smith'); 두가지 방식중에는 위에보다는 아래방식이 올바른 방식이다
  WHERE ename = 'smith'; 테이블에는 데이터 값이 대문자로 저장되어 있으므로 조회건수 0
  WHERE ename = 'SMITH'; 정상 실행
  
