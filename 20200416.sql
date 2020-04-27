@@ -5,7 +5,7 @@ FROM prod;  -- 데이터를 조회할 테이블 기술
 -- 특정 컬럼에 대해서만 조회 : SELECT 컬럼1, 컬럼2, .....
 
 SELECT prod_id, prod_name
-FROM prod; -- prod_id, prod_name컬럼만 prod 테이블에서 조회;
+FROM prod; -- prod_id, prod_name컬럼만 prod 테이블에서 조회
 
 SELECT * 
 FROM lprod; -- lprod 테이블에서 모든 데이터를 조회하는 쿼리
@@ -52,8 +52,9 @@ SELECT buyer_id as 바이어아이디, buyer_name as 이름
 FROM buyer; -- buyer 테이블에서 buter_id, buter_name 두 컬럼을 조회하는 쿼리(단, buyer_id -> 바이어아이디, buyer_name -> 이름 으로 컬럼 별칭 지정)
 
     문자열 연산(결합연산) : || (결합연산자는 +가 아니다.)
-    string str = "hello";
-    str = str + ", worrld"; // str : hello, world
+    
+    ※자바의 경우 => string str = "hello";
+                str = str + ", worrld"; // str : hello, world
 
 SELECT /*userid + 'test'*/ userid || 'test'  as concat, reg_dt + 5
 FROM users;
@@ -153,12 +154,12 @@ WHERE userid != 'brown';
 
 SQL 리터럴
     숫자 : ....20, 30, 40
-    문자 : 싱클 쿼테이션(' ')
+    문자 : 싱글 쿼테이션(' ')
     날짜 : TO_DATA('날짜문자열', '날짜 문자열의 형식');
 
 SELECT *
 FROM emp
-WHERE hiredate <= TO_DATE('19820101', 'YYYYMMDD'); -- 1982년 1월 1일 이후에 입사한 직원만 조회, 직원의 입사일자 : hiredate 컬럼
+WHERE hiredate >= TO_DATE('19820101', 'YYYYMMDD'); -- 1982년 1월 1일 이후에 입사한 직원만 조회, 직원의 입사일자 : hiredate 컬럼
 
 emp 테이블의 직원 : 14명
 1982년 1월 1일 이후 입사자 : 3명
