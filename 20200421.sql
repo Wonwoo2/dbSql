@@ -38,7 +38,7 @@
  FROM dual;
  
  SELECT LOWER ('Helllo, World'), UPPER('Helllo, World'), INITCAP('helllo, world')
- FROM emp1;
+ FROM emp;
  
  함수는 WHERE절에서도 사용 가능하다.
  emp 테이블의 SMITH 사원의 이름은 대문자로 저장되어 있음
