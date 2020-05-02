@@ -1,13 +1,13 @@
  NVL(expr1, expr2)
- expr1 == null
+ if expr1 == null
     return expr2
- expr2 != null
+ else
     return expr1
     
  NVL2(expr1, expr2, expr3)
- expr1 != null
+ if expr1 != null
     return expr2
- expr2 == null
+ else
     return expr3
     
  SELECT empno, ename, sal, comm, NVL2(comm, 100, 200)
@@ -93,10 +93,8 @@
         CASE
                 WHEN job = 'SALEMAN' THEN sal * 1.05
                 WHEN job = 'MANMAGER' THEN sal * 1.05
-                WHEN job = 'SSAL' THEN sal * 1.05
-                
-                ELSE sal
-            
+                WHEN job = 'SSAL' THEN sal * 1.05                
+                ELSE sal           
         END bonus
  FROM emp;
  
@@ -114,7 +112,7 @@
         return return3
     .....
     else
-        return deault;
+        return default;
  
  SELECT empno, ename, job, sal,
         DECODE(job, 'SALESMAN', sal * 1.05,

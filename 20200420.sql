@@ -69,7 +69,7 @@ ORDER BY ename DESC;
 
 오라클에서 페이징 처리 방법 ==> ROWNUM
 
-ROWNUM : SELECT 순서대로 1번부터 차례대로 번호를 보여해주는 특수 KEWORD
+ROWNUM : SELECT 순서대로 1번부터 차례대로 번호를 부여해주는 특수 KEWORD
 
 SELECT ROWNUM, empno, ename
 FROM emp;
@@ -137,7 +137,7 @@ ORDER BY ename) a) a
 WHERE rn BETWEEN 1 + (:page - 1) * :pageSize AND :page * :pageSize;
 
 WHERE rn BETWEEN 1 AND 10 : 1 PAGE
-WHERE zn BETWEEN 11 AND 20 : 2PAGE
+WHERE rn BETWEEN 11 AND 20 : 2PAGE
 WHERE rn BETWEEN 21 AND 30 : 3PAGE
 
 WHERE rn BETWEEN 1+(n-1)*10 AND pageSize * n ; n PAGE
@@ -205,7 +205,7 @@ FROM
 (SELECT empno, ename
 FROM emp
 ORDER BY ename) a) a
-WHERE rn BETWEEN 1 AND 10;
+WHERE rn BETWEEN 11 AND 14;
 
 PROD 테이블을 PROD_LGU (내림차순), PROD_COST(오름 차순)으로 정렬하여 페이징 처리 쿼리를 작성하세요
 단 페이지 사이즈는 5
@@ -216,6 +216,6 @@ FROM
 (SELECT ROWNUM rn, a.*
 FROM
 (SELECT *
-FROM PROD
+FROM prod
 ORDER BY prod_lgu DESC, prod_cost ASC) a) a
 WHERE RN BETWEEN (:page-1)* :pageSize + 1 AND :page * :pageSize;

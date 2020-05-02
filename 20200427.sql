@@ -53,12 +53,12 @@
  FROM emp, dept
  WHERE emp.deptno = dept.deptno;
  
- deptno가 10번인 직원들만 dept 테이블과 조인하여 조회
+ deptno가 10번인 직원들만 dept 테이블과 조인하여 조회;
  
  SELECT *
  FROM emp, dept
- WHERE emp.deptno = dept.deptno ==> 조인 연결고리 기술
-    AND emp.deptno = 10; ==> 행에 대한 제한 조건 기술
+ WHERE emp.deptno = dept.deptno -- 조인 연결고리 기술
+    AND emp.deptno = 10; -- 행에 대한 제한 조건 기술;
     
  ANSI-SQL : JOIN with USING
     - join 하려는 테이블간 이름이 같은 컬럼이 2개 이상일 때
